@@ -188,7 +188,12 @@ p {
 
 /*contact section */
 .contact{
-  margin-top: 1000px;
+  margin-top: 800px;
+}
+.contact .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* button styling */

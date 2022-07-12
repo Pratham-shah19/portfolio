@@ -131,9 +131,10 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
   geometryS.translate(xMid, 0, 0);
 
   const text = new THREE.Mesh(geometryS, matDark);
- 
-  text.position.set(-2.5, -170, -868);
-
+  
+  text.position.set(-30, -170, -1019);
+  text.rotateX(Math.PI);
+  text.rotateZ(Math.PI);  
   scene.add(text);
 });
 
@@ -231,7 +232,7 @@ const curve = new THREE.CatmullRomCurve3(
     new THREE.Vector3(-30, -170, -400),
     new THREE.Vector3(-30, -170, -490),
     new THREE.Vector3(-30, -170, -590),
-    new THREE.Vector3(-30, -170, -890),
+    new THREE.Vector3(-30, -170, -1200),
 
   ],
   false,
