@@ -1,5 +1,5 @@
-import * as THREE from "three";
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import * as THREE from "../node_modules/three";
+import { FontLoader } from "../node_modules/three/examples/jsm/loaders/FontLoader";
 import "../style.css";
 
 //INITIALIZATION...
