@@ -109,6 +109,34 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
   scene.add(text);
 });
 
+//contact section
+loader.load("./Open Sans Condensed_Bold.json", function (font) {
+  const color = 0xffffff;
+
+  const matDark = new THREE.LineBasicMaterial({
+    color: color,
+  });
+
+  const message = "CONTACT";
+
+  const shapes = font.generateShapes(message, 10);
+
+  const geometryS = new THREE.ShapeGeometry(shapes);
+
+  geometryS.computeBoundingBox();
+
+  const xMid =
+    -0.5 * (geometryS.boundingBox.max.x - geometryS.boundingBox.min.x);
+
+  geometryS.translate(xMid, 0, 0);
+
+  const text = new THREE.Mesh(geometryS, matDark);
+ 
+  text.position.set(-2.5, -170, -868);
+
+  scene.add(text);
+});
+
 //WAVY PLANES...
 const textureP = new THREE.TextureLoader().load("./images/white border.jpg");
 textureP.wrapS = THREE.RepeatWrapping;
@@ -202,6 +230,9 @@ const curve = new THREE.CatmullRomCurve3(
     new THREE.Vector3(-120, -170, -360),
     new THREE.Vector3(-30, -170, -400),
     new THREE.Vector3(-30, -170, -490),
+    new THREE.Vector3(-30, -170, -590),
+    new THREE.Vector3(-30, -170, -890),
+
   ],
   false,
   "centripetal"
@@ -228,6 +259,7 @@ function updateCamera() {
 
   const temp = curve.getPointAt(t);
   const temp2 = curve.getPointAt(t2);
+  console.log(temp2);
 
   camera.position.copy(temp);
   camera.lookAt(temp2);
@@ -271,3 +303,5 @@ function render() {
   plane.geometry.attributes.position.needsUpdate = true;
   renderer.render(scene, camera);
 }
+
+
