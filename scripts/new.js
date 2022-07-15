@@ -1,5 +1,5 @@
-import * as THREE from "../node_modules/three";
-import { FontLoader } from "../node_modules/three/examples/jsm/loaders/FontLoader";
+import * as THREE from "three";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import "../style.css";
 
 //INITIALIZATION...
@@ -74,8 +74,9 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
   geometryS.translate(xMid, 0, 0);
 
   const text = new THREE.Mesh(geometryS, matDark);
-  text.position.set(6.5, -188, 35);
+  text.position.set(6.5, -188, -25);
   text.rotateX(Math.PI);
+  text.rotateY(-Math.PI/30)
   text.rotateZ(Math.PI);
 
   scene.add(text);
@@ -132,7 +133,7 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
 
   const text = new THREE.Mesh(geometryS, matDark);
   
-  text.position.set(-30, -170, -1019);
+  text.position.set(-30, -170, -1080);
   text.rotateX(Math.PI);
   text.rotateZ(Math.PI);  
   scene.add(text);
@@ -260,7 +261,7 @@ function updateCamera() {
 
   const temp = curve.getPointAt(t);
   const temp2 = curve.getPointAt(t2);
-  console.log(temp2);
+  // console.log(temp2);
 
   camera.position.copy(temp);
   camera.lookAt(temp2);

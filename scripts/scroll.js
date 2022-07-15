@@ -34,14 +34,14 @@ function hasScrolled() {
 }
 
 //scroll trigger...
-function scrollTrigger(selector, options = {},trigger) {
+function scrollTrigger(selector, options = {}, trigger) {
   let els = document.querySelectorAll(selector);
   els = Array.from(els);
   els.forEach((el) => {
-    addObserver(el, options,trigger);
+    addObserver(el, options, trigger);
   });
 }
-function addObserver(el, options,trigger) {
+function addObserver(el, options, trigger) {
   // Check if `IntersectionObserver` is supported
   if (!("IntersectionObserver" in window)) {
     // Simple fallback
@@ -69,24 +69,30 @@ function addObserver(el, options,trigger) {
   }, options);
   observer.observe(el);
 }
-scrollTrigger('.skills',{},"active");
-scrollTrigger('.card-left',{},"move-right");
-scrollTrigger('.card-right',{},"move-left");
+scrollTrigger(".skills", {}, "active");
+scrollTrigger(".card-left", {}, "move-right");
+scrollTrigger(".card-right", {}, "move-left");
 
 //owl carousel
-$(document).ready(function(){
+$(document).ready(function () {
   $(".carousel").owlCarousel({
     autoPlay: true,
-    paginationSpeed:500,
-    pagination:false,
-    gotToFirst:true,
+    paginationSpeed: 500,
+    pagination: false,
+    gotToFirst: true,
     responsive: true,
-    items:3,
-    itemsDesktop:[1194,4],
-    itemsDesktopSmall:[979,3],
-    itemsTablet:[768,2],
-    itemsMobile:[479,1]
+    items: 3,
+    itemsDesktop: [1194, 4],
+    itemsDesktopSmall: [979, 3],
+    itemsTablet: [768, 2],
+    itemsMobile: [479, 1],
   });
-  
-})
+});
+const scrollProgress = document.getElementById("scroll-progress");
+const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+window.addEventListener("scroll", () => {
+  const scrollTop = (document.body.scrollTop || document.documentElement.scrollTop)-10;
+  scrollProgress.style.width = `${(scrollTop*0.08 / height) * 90}%`;
+});
 
