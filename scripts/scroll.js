@@ -91,8 +91,5 @@ $(document).ready(function () {
 const scrollProgress = document.getElementById("scroll-progress");
 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-window.addEventListener("scroll", () => {
-  const scrollTop = (document.body.scrollTop || document.documentElement.scrollTop)-10;
-  scrollProgress.style.width = `${(scrollTop*0.08 / height) * 90}%`;
-});
+
 
