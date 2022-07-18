@@ -2,6 +2,8 @@ import * as THREE from "three";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import "../style.css";
 
+const whiteborder = "https://raw.githubusercontent.com/Pratham-shah19/portfolio/main/images/white border.jpg";
+const fontstyle = "https://raw.githubusercontent.com/Pratham-shah19/portfolio/main/Open Sans Condensed_Bold.json"
 //INITIALIZATION...
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -28,7 +30,7 @@ scene.add(light);
 //TEXT...
 const loader = new FontLoader();
 //main text : pratham shah \n developer
-loader.load("./Open Sans Condensed_Bold.json", function (font) {
+loader.load(fontstyle, function (font) {
   const color = 0xffffff;
 
   const matDark = new THREE.LineBasicMaterial({
@@ -53,7 +55,7 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
   text.position.y = 28;
   scene.add(text);
 });
-loader.load("./Open Sans Condensed_Bold.json", function (font) {
+loader.load(fontstyle, function (font) {
   const color = 0xffffff;
 
   const matDark = new THREE.LineBasicMaterial({
@@ -83,7 +85,7 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
 });
 
 //skills section
-loader.load("./Open Sans Condensed_Bold.json", function (font) {
+loader.load("../Open Sans Condensed_Bold.json", function (font) {
   const color = 0xffffff;
 
   const matDark = new THREE.LineBasicMaterial({
@@ -111,7 +113,7 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
 });
 
 //contact section
-loader.load("./Open Sans Condensed_Bold.json", function (font) {
+loader.load(fontstyle, function (font) {
   const color = 0xffffff;
 
   const matDark = new THREE.LineBasicMaterial({
@@ -140,7 +142,7 @@ loader.load("./Open Sans Condensed_Bold.json", function (font) {
 });
 
 //WAVY PLANES...
-const textureP = new THREE.TextureLoader().load("./images/white border.jpg");
+const textureP = new THREE.TextureLoader().load(whiteborder);
 textureP.wrapS = THREE.RepeatWrapping;
 textureP.wrapT = THREE.RepeatWrapping;
 textureP.repeat.x = 10;
@@ -168,7 +170,7 @@ right.rotateX(-Math.PI / 2);
 scene.add(plane, left, right);
 
 //BASE PLANE...
-const texture = new THREE.TextureLoader().load("./images/white border.jpg");
+const texture = new THREE.TextureLoader().load(whiteborder);
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.x = 45;
@@ -185,7 +187,7 @@ scene.add(base);
 
 //CUBES...
 var cubes = [];
-const texture_cube = new THREE.TextureLoader().load("./images/white border.jpg");
+const texture_cube = new THREE.TextureLoader().load(whiteborder);
 const geometry_cube = new THREE.BoxGeometry(30, 30, 30);
 const material_cube = new THREE.MeshBasicMaterial({
   color: 0xffffff,
