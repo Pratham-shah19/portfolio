@@ -84,8 +84,8 @@ loader.load(fontstyle, function (font) {
   scene.add(text);
 });
 
-//skills section
-loader.load("../Open Sans Condensed_Bold.json", function (font) {
+//projects section
+loader.load(fontstyle, function (font) {
   const color = 0xffffff;
 
   const matDark = new THREE.LineBasicMaterial({
