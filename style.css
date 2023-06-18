@@ -5,34 +5,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-.progress-container {
-  width: 100%;
-  background-color: transparent;
-  height: 5px;
-  display: block;
-}
-.progress-bar {
-  background-color: red;
-  width: 0%;
-  display: block;
-  height: inherit;
-}
-
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  width: 0%;
-  height: 4px;
-  background: #7983ff;
-  z-index: 10000;
-}
 /*custom colorful scrollbar*/
 ::-webkit-scrollbar {
   width: 12px;
@@ -78,7 +50,7 @@ section {
 .header {
   z-index: 99;
   position: fixed;
-  width: 100vw;
+  width:100%;
   top: 0;
   left: 0;
   color: white;

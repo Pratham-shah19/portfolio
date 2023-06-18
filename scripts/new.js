@@ -214,12 +214,12 @@ function addStar() {
   const star = new THREE.Mesh(geometry_star, material_star);
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(1000));
+    .map(() => THREE.MathUtils.randFloatSpread(1200));
   star.position.set(x, y, z);
   scene.add(star);
   stars.push(star);
 }
-Array(11000).fill().forEach(addStar);
+Array(13000).fill().forEach(addStar);
 
 //CLOCK...
 var clock = new THREE.Clock();

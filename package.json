@@ -13,6 +13,7 @@
   "dependencies": {
     "curve": "^0.1.1",
     "dat.gui": "^0.7.9",
+    "esbuild-wasm": "^0.18.4",
     "three": "^0.140.2"
   }
 }
