@@ -2,8 +2,8 @@ import * as THREE from "three";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import "../style.css";
 
-const whiteborder = "https://raw.githubusercontent.com/Pratham-shah19/portfolio/main/images/white border.jpg";
-const fontstyle = "https://raw.githubusercontent.com/Pratham-shah19/portfolio/main/Open Sans Condensed_Bold.json"
+const whiteborder = "./images/white border.jpg";
+const fontstyle = "./Open Sans Condensed_Bold.json"
 //INITIALIZATION...
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
